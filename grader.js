@@ -70,9 +70,10 @@ if (require.main == module) {
          .option('-u, --url <url>', 'Path to url') 
          .parse(process.argv);   
     if (program.url == undefined) {
-        var checkJson = checkHtmlFile(program.file, program.checks);
-	var outJson = JSON.stringify(checkJson, null, 4);
-	console.log(outJson);
+	showOutput(program.file, program.checks);
+        //var checkJson = checkHtmlFile(program.file, program.checks);
+	//var outJson = JSON.stringify(checkJson, null, 4);
+	//console.log(outJson);
     } else {
 	assertURLExists(program.url, program.checks);
     }
